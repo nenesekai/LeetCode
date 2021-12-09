@@ -16,12 +16,5 @@ public:
 
 int main()
 {
-    auto* nums = new std::vector<int>{1, 3, 5, 6};
-    Solution solution;
-
-    auto* index = new int(solution.searchInsert(*nums, 5));
-    std::cout << *index << std::endl;
-
-    delete index, nums;
-    return 0;
+    
 }
