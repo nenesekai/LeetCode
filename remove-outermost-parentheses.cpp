@@ -10,18 +10,15 @@ public:
     string removeOuterParentheses(string s) 
     {
         int parentheses_count = 0;
-        bool outermost_clear = false;
 
         for (string::iterator iter = s.begin(); iter < s.end(); iter++)
         {
             if (*iter == '(')
             {
-                if (parentheses_count == 0 && !outermost_clear)
+                if (parentheses_count == 0)
                 {
                     s.erase(iter);
                     iter--;
-
-                    outermost_clear = true;
                 }
                 else
                 {
@@ -30,12 +27,10 @@ public:
             }
             else if (*iter == ')')
             {
-                if (parentheses_count == 0 && outermost_clear)
+                if (parentheses_count == 0)
                 {
                     s.erase(iter);
                     iter--;
-
-                    outermost_clear = false;
                 }
                 else
                 {
@@ -51,11 +46,13 @@ public:
 
 int main()
 {
-    string original_text = "(()())(())(()(()))";
+    string original_text = "(()())(())";
 
-    Solution *obj = new Solution();
+    Solution* obj = new Solution;
 
-    cout << obj->removeOuterParentheses(original_text) << endl;
+    string result = obj->removeOuterParentheses(original_text);
+
+    cout << result << endl;
 
     return 0;
 }
