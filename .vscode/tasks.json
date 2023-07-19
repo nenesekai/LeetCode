@@ -9,6 +9,7 @@
 				"-fcolor-diagnostics",
 				"-fansi-escape-codes",
 				"-g",
+				"-std=c++14",
 				"${file}",
 				"-o",
 				"${workspaceFolder}/executables/${fileBasenameNoExtension}"
